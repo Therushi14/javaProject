@@ -15,6 +15,7 @@ public class DisplayStudent extends JFrame {
     private JLabel achievementsLabel;
     private JTextArea summaryTextArea;
     private JButton saveSummaryButton;
+    private JButton setGoalsButton;
     private JButton feedbackButton; // Moved button declaration here
     private JButton viewClubImagesButton; // Added button for viewing club images
 
@@ -84,6 +85,19 @@ public class DisplayStudent extends JFrame {
         });
         mainPanel.add(feedbackButton, BorderLayout.SOUTH); // Add button to mainPanel
 
+
+        setGoalsButton = new JButton("Set Goals");
+        setGoalsButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Redirect to FeedbackPage
+               SetGoalsPage sg = new SetGoalsPage(prn);
+               sg.setVisible(true);
+               dispose();
+
+            }
+        });
+        mainPanel.add(setGoalsButton, BorderLayout.SOUTH);
+
         viewClubImagesButton = new JButton("View Club "); // Button for viewing club images
         viewClubImagesButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -95,6 +109,12 @@ public class DisplayStudent extends JFrame {
         mainPanel.add(summaryPanel, BorderLayout.CENTER);
 
         add(mainPanel);
+        JPanel buttonPanel = new JPanel(new GridLayout(1, 3)); // Create a panel for buttons with GridLayout
+        buttonPanel.add(setGoalsButton);
+        buttonPanel.add(feedbackButton);
+        buttonPanel.add(viewClubImagesButton);
+
+        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
     }
 
     // Method to fetch student data from the database using PRN

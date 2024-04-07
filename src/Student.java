@@ -1,4 +1,5 @@
 package src;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -12,7 +13,10 @@ public class Student extends JFrame implements ActionListener {
     private static final String DB_USER = "system";
     private static final String DB_PASSWORD = "root";
 
+
+
     public Student() {
+        //this.setGoalsButton = setGoalsButton;
         setTitle("Enter the PRN");
         setSize(400, 250);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,6 +38,10 @@ public class Student extends JFrame implements ActionListener {
         gbc.gridx = 1;
         gbc.gridy = 0;
         panel.add(prnField, gbc);
+
+
+
+
 
         submitButton = new JButton("Submit");
         submitButton.addActionListener(this);

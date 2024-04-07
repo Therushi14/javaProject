@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 
+import src.StudentInfo;
+
 public class Faculty extends JFrame implements ActionListener {
     private JTextField nameField;
     private JTextField divisionField;
